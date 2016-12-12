@@ -1,0 +1,48 @@
+<mvc:View
+        controllerName="sap.ui.ksilence.controller.Message"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}">
+        <headerContent>
+            <mvc:XMLView viewName="sap.ui.ksilence.view.HeaderButtons" />
+        </headerContent>
+
+        <!-- Navigation -->
+        <Panel class="bluePanelHeaderSmall">
+            <content>
+                <Button text="{i18n>newMessage}" press="changeRouteNavigationNewMessage"></Button>
+                <Button text="{i18n>myTasks}" press="changeRouteNavigationMyTasks"></Button>
+            </content>
+        </Panel>
+
+        <!-- Own Message -->
+        <Panel headerText="{i18n>ownMessage}">
+            <content>
+                <!-- Input individual message -->
+                <Input width="100%" value="{settings>/messageText}"/>
+                <Button press="onPressButton" icon="img/login_pic.png" class="loginButton" text="{i18n>textContinue}" width="50%"/>
+            </content>
+        </Panel>
+
+        <!-- List of defined messages -->
+        <Panel headerText="{i18n>defindedMessage}">
+            <content>
+
+                <List
+                        id="messageList"
+                        class="sapUiResponsiveMargin"
+                        width="auto"
+                        items="{remoteMessages>/}">
+                    <items>
+                        <ObjectListItem
+                                title="{remoteMessages>text}"
+                                type="Navigation"
+                                press="onPressMessageList"
+                        />
+                    </items>
+                </List>
+            </content>
+        </Panel>
+
+    </Page>
+</mvc:View>

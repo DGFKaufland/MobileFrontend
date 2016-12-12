@@ -1,0 +1,82 @@
+<mvc:View
+        controllerName="sap.ui.ksilence.controller.Contact"
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>appTitle}" showNavButton="true" navButtonPress="onNavBack">
+
+        <!-- Selected Message -->
+        <Panel headerText="{i18n>textYourMessage}">
+            <content>
+                <Text width="100%" text="{settings>/messageText}" />
+            </content>
+        </Panel>
+
+            <!-- Number -->
+            <Panel visible="{= ${settings>/messageText}.indexOf('{number}') > - 1 }">
+                <content>
+                    <Text width="20%" text="{i18n>inputNumber}"/>
+                    <Input width="80%" id="inputNumber"/>
+                </content>
+            </Panel>
+
+            <!-- Contact -->
+            <Panel visible="{= ${settings>/messageText}.indexOf('{contact}') > - 1 }">
+                <content>
+                    <Text width="20%" text="{i18n>inputContact}"/>
+                    <Select id="selectContacts" items="{
+                        path : 'availableContacts>/',
+                        sorter: {
+                            path: 'name'
+                        }
+                    }">
+                        <core:Item text="{availableContacts>name}" />
+                    </Select>
+                </content>
+            </Panel>
+
+            <!-- Department -->
+            <Panel visible="{= ${settings>/messageText}.indexOf('{department}') > - 1 }">
+                <content>
+                    <Text width="20%" text="{i18n>inputDepartment}"/>
+                    <Select id="selectDepartment" items="{remoteDepartments>/}">
+                        <core:Item text="{remoteDepartments>name}" />
+                    </Select>
+                </content>
+            </Panel>
+
+        <!-- Choose Contact -->
+        <Panel headerText="{i18n>textChooseContact}">
+            <content>
+                <List
+                    id="contactList"
+                    width="auto"
+                    items="{
+                        path : 'availableContacts>/',
+                        sorter: {
+                            path: 'name'
+                        }
+                    }"
+                >
+                    <headerToolbar>
+                        <Toolbar>
+                            <ToolbarSpacer />
+                            <SearchField width="100%" search="onFilterContacts" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <items>
+                        <ObjectListItem
+                            title="{availableContacts>name}"
+                            type="Navigation"
+                            press="onPressContact"
+                            visible="{=
+                                ${availableContacts>available}
+                            }"
+                        />
+                    </items>
+                </List>
+            </content>
+        </Panel>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,80 @@
+/* Border Header Top */
+.sapMPageHeader::before{
+    border: none;
+}
+
+/* Text */
+.sapMText{
+    line-height: 3.4;
+}
+
+/* Title */
+.sapMTitle{
+    background: url("../img/kauflandLogo.png") no-repeat left;
+    padding-left: 45px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e10915 !important;
+}
+
+.bluePanelHeaderSmall .sapMPanelBGTranslucent{
+    background: #06517f;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.bluePanelHeaderSmall .sapUiUx3NavBarItem{
+    color: #fff;
+}
+
+.bluePanelHeader .sapMPanelBGTranslucent{
+    color: #fff;
+    height: 200px;
+    background: #06517f;
+    padding-top: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.bluePanelHeader .sapMPanelBGTranslucent .sapMText{
+    font-size: 24px !important;
+    padding-left: 5px;
+}
+
+/* Login Button */
+.loginButton{
+    float: right;
+}
+
+/* Buttons */
+.sapMBtnDefault{
+    background: #e10915;
+    height: 47px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.sapMBtnInner{
+    border: none;
+    text-shadow: none;
+    padding-top: 5px;
+}
+
+.sapMBtn:hover > .sapMBtnHoverable {
+    background-image: none;
+    background-color: #c70812;
+}
+
+.sapMBtnIconLeft {
+    right: 10px !important;
+    left: auto;
+    top: 17px;
+}
+
+.sapMBtnIcon{
+    width: auto;
+}

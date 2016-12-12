@@ -1,0 +1,67 @@
+<mvc:View
+        controllerName="sap.ui.ksilence.controller.MyTasks"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}">
+        <headerContent>
+            <mvc:XMLView viewName="sap.ui.ksilence.view.HeaderButtons" />
+        </headerContent>
+
+        <!-- Navigation -->
+        <Panel class="bluePanelHeaderSmall">
+            <content>
+                <Button text="{i18n>newMessage}" press="changeRouteNavigationNewMessage"></Button>
+                <Button text="{i18n>myTasks}" press="changeRouteNavigationMyTasks"></Button>
+            </content>
+        </Panel>
+
+        <Panel headerText="{i18n>inProcessTasks}">
+            <content>
+                <Table
+                        items="{allNotifications>/}">
+                    <columns>
+                        <Column width="75%"></Column>
+                        <Column></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem visible="{= ${allNotifications>state} === 'INPROCESS' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
+                            <cells>
+                                <ObjectIdentifier
+                                        title="{allNotifications>fromContactName} : {allNotifications>body}"
+                                />
+                            </cells>
+                            <cells>
+                                <Button press="closeTask" text="DONE"></Button>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+
+        <Panel headerText="{i18n>openTasks}">
+            <content>
+                <Table
+                        items="{allNotifications>/}">
+                    <columns>
+                        <Column width="75%"></Column>
+                        <Column></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem visible="{= ${allNotifications>state} === 'OPEN' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
+                            <cells>
+                                <ObjectIdentifier
+                                        title="{allNotifications>fromContactName} : {allNotifications>body}"
+                                />
+                            </cells>
+                            <cells>
+                                <Button press="inProcessTask" text="IN PROCESS"></Button>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,100 @@
+{
+  "_version": "0.0.1",
+  "sap.app": {
+    "_version": "0.0.1",
+    "id": "sap.ui.ksilence",
+    "type": "application",
+    "i18n": "i18n/i18n_de.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "ach": "CA-UI5-DOC"
+  },
+  "sap.ui": {
+    "_version": "0.0.1",
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_bluecrystal"
+    ]
+  },
+  "sap.ui5": {
+    "_version": "0.0.1",
+    "rootView": "sap.ui.ksilence.view.App",
+    "dependencies": {
+      "minUI5Version": "1.30",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+    "config": {
+      "dataLocal": "/data.json"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ui.ksilence.i18n.i18n_en"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri" : "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "sap.ui.ksilence.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "register",
+          "target": "register"
+        },
+        {
+          "pattern": "message",
+          "name": "message",
+          "target": "message"
+        },
+        {
+          "pattern": "contact",
+          "name": "contact",
+          "target": "contact"
+        },
+        {
+          "pattern": "mytasks",
+          "name": "mytasks",
+          "target": "mytasks"
+        }
+      ],
+      "targets": {
+        "register": {
+          "viewName": "Register"
+        },
+        "message": {
+          "viewName": "Message"
+        },
+        "contact" : {
+          "viewName": "Contact"
+        },
+        "mytasks" : {
+          "viewName": "MyTasks"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.kaufland.ksilence"
+        },
+        "phonegap-plugin-push": {
+            "PACKAGE_NAME": "de.kaufland.ksilence"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "de.kaufland.ksilence"
+        }
+    },
+    "dependent_plugins": {}
+}

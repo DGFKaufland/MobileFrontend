@@ -1,0 +1,9 @@
+<mvc:View
+        controllerName="sap.ui.ksilence.controller.HeaderButtons"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+
+            <Button icon="sap-icon://action-settings" press="onOpenDialog"/>
+            <Button icon="sap-icon://log" press="onLogoutPress"/>
+
+</mvc:View>
