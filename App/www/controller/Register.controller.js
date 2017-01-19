@@ -16,22 +16,41 @@ sap.ui.define([
             // Show message
             if (viewLocalContact.getProperty("/name") == ""){
                 MessageToast.show(oBundle.getText("invalidName"));
-            } else {
+            } 
+            else {
                 // Update global Model
                 var gLocalContact = sap.ui.getCore().getModel("gLocalContact");
-
+ 
                 // Check if registrationToken already exists in remote contacts
                 var remoteContacts = sap.ui.getCore().getModel("gRemoteContacts");
+                //var contactFound = false;
                 for(var i = 0; i < remoteContacts.oData.length; i++){
-                    if(remoteContacts.oData[i].registrationToken == gLocalContact.getProperty("/registrationToken")){
+                    
+                	if(remoteContacts.oData[i].name == gLocalContact.getProperty("/name")){
                         gLocalContact.setProperty("/id", remoteContacts.oData[i].id);
                         break;
                     }
                 }
-
+                
+                
+                    if (gLocalContact.getProperty("/id") == ""){
+                    	MessageToast.show(oBundle.getText("notFoundName"));
+                    }
+                    else{
+                	
+                    
+                    	
+                	/*
+                	if(remoteContacts.oData[i].registrationToken == gLocalContact.getProperty("/registrationToken")){
+                        gLocalContact.setProperty("/id", remoteContacts.oData[i].id);
+                        break;
+                    }      
+                	 */
+                
                 // Set contact to available
                 gLocalContact.setProperty("/available", "true");
-
+                
+                /*
                 if(gLocalContact.getProperty("/id") == ""){
                     // create new contact
                     $.ajax({
@@ -44,7 +63,8 @@ sap.ui.define([
                             gLocalContact.setProperty("/id", data.id);
                         }
                     });
-                } else {
+                } else { */
+                
                     // update existing contact
                     $.ajax({
                         type: "PUT",
@@ -53,12 +73,13 @@ sap.ui.define([
                         contentType: "application/json; charset=utf-8",
                         dataType: "json"
                     });
-                }
+              /*  }*/
 
                 // Redirect to messages view if name not empty
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("message");
-            }
+             }
+           }
         }
     });
 });

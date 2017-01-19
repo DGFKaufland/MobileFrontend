@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="App/platforms/android/CordovaLib/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="App/platforms/android/CordovaLib/build/generated/source/buildConfig/release"/>
+	<classpathentry kind="src" path="App/platforms/android/CordovaLib/src"/>
+	<classpathentry kind="src" path="App/platforms/android/src"/>
+	<classpathentry kind="src" path="App/plugins/phonegap-plugin-push/src/android"/>
+	<classpathentry kind="lib" path="App/platforms/android/CordovaLib/build/intermediates/bundles/debug/classes.jar"/>
+	<classpathentry kind="lib" path="App/platforms/android/CordovaLib/build/intermediates/bundles/release/classes.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="App/platforms/android/CordovaLib/build/intermediates/classes/debug"/>
+</classpath>

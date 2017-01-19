@@ -16,11 +16,27 @@ sap.ui.define([
             var oData = {
                 lang : "en",        // Default language
                 messageText : "",
-                url : "http://dgf-mbe.azurewebsites.net/api/v1/"
+                url : "http://localhost:8080/api/v1/"
             };
             var oModel = new JSONModel(oData);
             sap.ui.getCore().setModel(oModel, "gSettings");
-
+           
+            
+            // set default settings for snooze
+            var snoozeTime = {
+            	snooze_time : ""        // default time
+            };
+            var oSnoozeTime = new JSONModel(snoozeTime);
+            sap.ui.getCore().setModel(oSnoozeTime, "gLocalSnoozeTime");
+            
+         // set default settings for snooze
+            var snoozeMessage = {
+                message : ""			   // default message
+            };
+            var oSnoozeMessage = new JSONModel(snoozeMessage);
+            sap.ui.getCore().setModel(oSnoozeMessage, "gLocalSnoozeMessage");
+            
+      
             // set local contact informations
             var oLocalContact = {
                 id : "",

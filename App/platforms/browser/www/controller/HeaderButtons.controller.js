@@ -37,6 +37,9 @@ sap.ui.define([
 
             // Show success message
             MessageToast.show(oBundle.getText("successfulLogout"));
+            gLocalContact.setProperty("/id", "");
+            gLocalContact.setProperty("/name", "");
+            gLocalContact.setProperty("/registration_token", "");
 
             // Redirect to register page
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

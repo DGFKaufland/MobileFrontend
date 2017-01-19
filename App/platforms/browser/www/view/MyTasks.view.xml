@@ -46,6 +46,7 @@
                     <columns>
                         <Column width="75%"></Column>
                         <Column></Column>
+                        <Column></Column>
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'OPEN' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
@@ -56,6 +57,9 @@
                             </cells>
                             <cells>
                                 <Button press="inProcessTask" text="IN PROCESS"></Button>
+                            </cells>
+                            <cells>
+                                <Button press="onOpenDialogSnooze" text="SNOOZE"></Button>
                             </cells>
                         </ColumnListItem>
                     </items>

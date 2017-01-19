@@ -7,14 +7,14 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.kaufland.ksilence"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "de.kaufland.ksilence"
+            "PACKAGE_NAME": "com.kaufland.ksilence"
         },
         "phonegap-plugin-push": {
-            "PACKAGE_NAME": "de.kaufland.ksilence"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "de.kaufland.ksilence"
+            "PACKAGE_NAME": "com.kaufland.ksilence"
         }
     },
     "dependent_plugins": {}

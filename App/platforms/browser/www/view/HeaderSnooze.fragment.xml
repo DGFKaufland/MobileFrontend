@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core" >
+   		<Dialog title="{i18n>textSnooze}">
+        <Text text="{i18n>textSnoozeTime}" width="30%"/>
+        <Input value="{snoozeTime>/snooze_time}" width="70%" />
+
+        <Text text="{i18n>textSnoozeMessage}" width="30%"/>
+        <Input value="{snoozeMessage>/message}" width="70%" />
+
+        <beginButton>
+            <Button
+                    text="{i18n>dialogSnoozeButtonText}"
+                    press="saveSnooze"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
