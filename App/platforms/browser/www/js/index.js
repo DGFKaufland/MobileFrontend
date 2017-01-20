@@ -1,4 +1,4 @@
-var appServerUrl = "localhost:8080/api/v1/";
+var appServerUrl = "http://dgf-mbe.azurewebsites.net/api/v1/";
 
 // Cordova onDeviceReady
 var app = {

@@ -17,15 +17,7 @@ sap.ui.define([
             this.oItem = {snooze_time : "",
       			  message: "",
       			  state: ""};
-          
-            /*
-        	var snoozeInformation = {snooze_time : "", 
-					 message: ""};
-            this.getView().setModel(snoozeInformation, "snoozeInformation");
-            
-            this.snoozeInformation = {snooze_time : "", 
-					 message: ""};
-            */
+         
     
         },
         inProcessTask : function(oEvent) {
