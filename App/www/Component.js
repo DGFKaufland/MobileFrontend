@@ -16,7 +16,7 @@ sap.ui.define([
             var oData = {
                 lang : "en",        // Default language
                 messageText : "",
-                url : "http://dgf-frontend.azurewebsites.net/api/v1/"
+                url : "http://dgf-mbe.azurewebsites.net/api/v1/"
             };
             var oModel = new JSONModel(oData);
             sap.ui.getCore().setModel(oModel, "gSettings");
