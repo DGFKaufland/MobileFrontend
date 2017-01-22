@@ -65,9 +65,9 @@ sap.ui.define([
         	   	
              this.oItem.snooze_time =  gLocalSnoozeTime.oData.snooze_time;
              this.oItem.message = gLocalSnoozeMessage.oData.message;
-             this.changeStatusTask(this.oItem, "INPROCESS");
-            this.oItem.state = "INPROCESS";
-            console.log(this.oItem);
+             this.changeStatusTask(this.oItem, "SNOOZE");
+             this.oItem.state = "SNOOZE";
+             console.log(this.oItem);
             
             $.ajax({
                 type: "PUT",

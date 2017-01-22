@@ -39,6 +39,34 @@
             </content>
         </Panel>
 
+		<Panel headerText="{i18n>snoozeTasks}">
+            <content>
+                <Table
+                        items="{allNotifications>/}">
+                    <columns>
+                        <Column width="75%"></Column>
+                        <Column></Column>
+                        <Column></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem visible="{= ${allNotifications>state} === 'SNOOZE' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
+                            <cells>
+                                <ObjectIdentifier
+                                        title="{allNotifications>fromContactName} : {allNotifications>body}"
+                                />
+                            </cells>
+                            <cells>
+                                <Button press="inProcessTask" text="IN PROCESS"></Button>
+                            </cells>
+                            <cells>
+                                <Button press="onOpenDialogSnooze" text="SNOOZE"></Button>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+
         <Panel headerText="{i18n>openTasks}">
             <content>
                 <Table
