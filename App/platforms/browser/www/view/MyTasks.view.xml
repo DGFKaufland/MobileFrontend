@@ -21,7 +21,7 @@
                         items="{allNotifications>/}">
                     <columns>
                         <Column width="75%"></Column>
-                        <Column></Column>
+                        <Column width="50px"></Column>
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'INPROCESS' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
@@ -45,8 +45,8 @@
                         items="{allNotifications>/}">
                     <columns>
                         <Column width="75%"></Column>
-                        <Column></Column>
-                        <Column></Column>
+                        <Column width="100px"></Column>
+                        <Column width="65px"></Column>
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'SNOOZE' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
@@ -73,8 +73,8 @@
                         items="{allNotifications>/}">
                     <columns>
                         <Column width="75%"></Column>
-                        <Column></Column>
-                        <Column></Column>
+                        <Column width="100px"></Column>
+                        <Column width="65px"></Column>
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'OPEN' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
