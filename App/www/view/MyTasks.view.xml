@@ -21,6 +21,7 @@
                         items="{allNotifications>/}">
                     <columns>
                         <Column width="75%"></Column>
+						<Column></Column>
                         <Column width="50px"></Column>
                     </columns>
                     <items>
@@ -44,9 +45,11 @@
                 <Table
                         items="{allNotifications>/}">
                     <columns>
-                        <Column width="75%"></Column>
-                        <Column width="100px"></Column>
-                        <Column width="65px"></Column>
+                         <Column width="75%"></Column>
+<!-- 						 <Column></Column>
+						 <Column></Column> -->
+					     <Column width="30px"></Column>
+                         <Column width="30px"></Column> 
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'SNOOZE' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
@@ -56,10 +59,10 @@
                                 />
                             </cells>
                             <cells>
-                                <Button press="inProcessTask" text="IN PROCESS"></Button>
+                                <Button press="inProcessTask" text="P"></Button>
                             </cells>
                             <cells>
-                                <Button press="onOpenDialogSnooze" text="SNOOZE"></Button>
+                                <Button press="onOpenDialogSnooze" text="S"></Button>
                             </cells>
                         </ColumnListItem>
                     </items>
@@ -73,8 +76,8 @@
                         items="{allNotifications>/}">
                     <columns>
                         <Column width="75%"></Column>
-                        <Column width="100px"></Column>
-                        <Column width="65px"></Column>
+                        <Column width="30px"></Column>
+                        <Column width="30px"></Column>
                     </columns>
                     <items>
                         <ColumnListItem visible="{= ${allNotifications>state} === 'OPEN' &amp;&amp; ${allNotifications>toContactId} === ${localContact>/id} }">
@@ -84,10 +87,10 @@
                                 />
                             </cells>
                             <cells>
-                                <Button press="inProcessTask" text="IN PROCESS"></Button>
+                                <Button press="inProcessTask" text="P"></Button>
                             </cells>
                             <cells>
-                                <Button press="onOpenDialogSnooze" text="SNOOZE"></Button>
+                                <Button press="onOpenDialogSnooze" text="S"></Button>
                             </cells>
                         </ColumnListItem>
                     </items>
